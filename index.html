@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#6 Stepper Component | MarciX</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dcf233daaa.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="stepper">
+            <button class="prev btn-disabled" disabled><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="stepper-con">
+                <div class="box">
+                    <div class="circle-1 circle"></div>
+                    <p class="main-t">Personal</p>
+                </div>
+                <div class="line-1 line"></div>
+                <div class="box">
+                    <div class="circle-2 circle"></div>
+                    <p class="main-t">Address</p>
+                </div>
+                <div class="line-2 line"></div>
+                <div class="box">
+                    <div class="circle-3 circle"></div>
+                    <p class="main-t">Issue</p>
+                </div>
+            </div>
+            <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="inputs-con">
+            <div class="container-1 con">
+                <div class="input-div">
+                    <p class="input-t">First name</p>
+                    <input type="text" class="con1-inputs" placeholder="First name">
+                </div>
+                <div class="input-div">
+                    <p class="input-t">Last name</p>
+                    <input type="text" class="con1-inputs" placeholder="Second name">
+                </div>
+                <div class="input-div">
+                    <p class="input-t">Email</p>
+                    <input type="text" class="con1-inputs" placeholder="example@example.com">
+                </div>
+            </div>
+            <div class="container-2 con">
+                <div class="input-div">
+                    <p class="input-t">Country</p>
+                    <input type="text" class="con2-inputs" placeholder="Country">
+                </div>
+                <div class="input-div">
+                    <p class="input-t">City</p>
+                    <input type="text" class="con2-inputs" placeholder="City">
+                </div>
+                <div class="input-div">
+                    <p class="input-t">Zip code</p>
+                    <input type="text" class="con2-inputs" placeholder="Zip">
+                </div>
+            </div>
+            <div class="container-3 con">
+                <div class="input-div">
+                    <p class="input-t">Issue(s)</p>
+                    <textarea rows="10" type="text" class="con3-inputs" placeholder="Enter your issues of us service"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="back btn-hidden">Back</button>
+            <button class="finish btn-hidden">Finish</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
