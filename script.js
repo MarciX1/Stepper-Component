@@ -11,6 +11,8 @@ const con2Inputs = document.querySelectorAll(".con2-inputs");
 const con3Inputs = document.querySelector(".con3-inputs");
 const backBtn = document.querySelector(".back");
 const finishBtn = document.querySelector(".finish");
+const spanLine1 = document.querySelector(".spanLine1");
+const spanLine2 = document.querySelector(".spanLine2");
 
 let maxIndex = 3;
 let currentIndex = 1;
@@ -27,12 +29,14 @@ backBtn.addEventListener("click", prevAndBack);
 function prevAndBack() {
     if (currentIndex === 3) {
         inputsCon.style.left = "-580px";
+        circle3.style.transitionDelay = "0s";
         circle3.style.background = "transparent";
-        line2.style.background = "#f7f7f7";
+        spanLine2.style.animation = "spanLine2Back 0.3s ease forwards";
     } else if (currentIndex === 2) {
         inputsCon.style.left = "0px";
+        circle2.style.transitionDelay = "0s";
         circle2.style.background = "transparent";
-        line1.style.background = "#f7f7f7";
+        spanLine1.style.animation = "spanLine1Back 0.3s ease forwards";
     }
     currentIndex -= 1;
     disabledPrev();
@@ -42,11 +46,13 @@ function prevAndBack() {
 nextBtn.addEventListener("click", () => {
     if (currentIndex === 1) {
         inputsCon.style.left = "-580px";
-        line1.style.background = "#f8b500";
+        spanLine1.style.animation = "spanLine1 0.3s ease forwards";
+        circle2.style.transitionDelay = "0.15s";
         circle2.style.background = "#f8b500";
     } else if (currentIndex === 2) {
         inputsCon.style.left = "-1160px"; 
-        line2.style.background = "#f8b500";
+        spanLine2.style.animation = "spanLine2 0.3s ease forwards";
+        circle3.style.transitionDelay = "0.15s";
         circle3.style.background = "#f8b500";
     }
     currentIndex += 1;

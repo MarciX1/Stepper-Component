@@ -13,25 +13,19 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--gray);
+    height: 100vh;
 }
 
 .container {
+    width: 100%;
+    height: 100%;
     background: var(--black);
-    height: 450px;
-    width: 600px;
-    padding: 20px 20px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .stepper {
@@ -40,19 +34,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0 10px;
 }
 
 .stepper-con {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% - 100px);
+    padding: 0 10px;
+    width: 100%;
     height: 100%;
     gap: 8px;
 }
 
 .box {
+    width: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,12 +57,18 @@ body {
 }
 
 .main-t {
+    font-size: 15px;
     color: var(--white);
 }
 
 .circle {
-    width: 50px;
-    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: var(--white);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 3px solid var(--white);
 }
@@ -76,24 +78,68 @@ body {
 }
 
 .line {
-    width: 110px;
+    position: relative;
+    width: 50px;
     height: 3px;
     border-radius: 10px;
     margin-bottom: 20px;
     background: var(--white);
 }
 
+.spanLine {
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--yellow);
+}
+
+@keyframes spanLine1 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes spanLine2 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes spanLine1Back {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes spanLine2Back {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
 .prev, .next {
     margin-bottom: 20px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     outline: none;
     border: none;
     background: transparent;
     color: var(--white);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .btn-disabled {
@@ -103,22 +149,25 @@ body {
 }
 
 .inputs-con {
-    width: 560px;
-    height: 250px;
+    width: 100%;
+    height: 300px;
     display: flex;
     position: relative;
-    gap: 20px;
+    gap: 100px;
+    margin-bottom: 30px;
+    transition: 0.3s ease;
 }
 
 .con {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    gap: 30px;
     width: 100%;
     height: 100%;
-    padding: 20px 35px 0 35px;
+    padding: 0 10px 0 30px;
 }
 
 .input-div {
@@ -127,23 +176,24 @@ body {
 }
 
 .input-t {
+    font-size: 20px;
     font-weight: bold;
     color: var(--white);
 }
 
 .con1-inputs, .con2-inputs, .con3-inputs {
-    width: 490px;
+    width: 310px;
     outline: none;
     border: none;
     background: var(--gray);
     color: rgba(0,0,0,0.8);
-    font-size: 15px;
+    font-size: 18px;
     padding: 0 10px;
     border-radius: 8px;
 }
 
 .con1-inputs::placeholder, .con2-inputs::placeholder, .con3-inputs::placeholder {
-    font-size: 15px;
+    font-size: 18px;
     color: rgba(255,255,255,0.5);
 }
 
@@ -152,24 +202,23 @@ body {
 }
 
 .con1-inputs, .con2-inputs {
-    height: 30px;
+    height: 50px;
 }
 
 .con3-inputs {
     padding: 10px 10px;
     min-height: 30px;
-    font-size: 16px;
-    line-height: 1;
+    font-size: 18px;
     resize: none;
 }
 
 .buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     height: 100px;
     width: 100%;
-    padding: 0 35px;
+    padding: 0 20px;
 }
 
 .back, .finish {
@@ -180,7 +229,6 @@ body {
     background: transparent;
     outline: none;
     cursor: pointer;
-    margin-top: 20px;
     transition: 0.3s ease;
 }
 
@@ -208,4 +256,150 @@ body {
 
 .btn-hidden {
     display: none;
+}
+
+@media (min-width: 480px) {
+    .container {
+        padding: 50px 30px;
+    }
+    
+    .stepper-con {
+        padding: 0 30px;
+        gap: 10px;
+    }
+    
+    .box {
+        width: 70px;
+        gap: 5px;
+    }
+    
+    .main-t {
+        font-size: 18px;
+    }
+    
+    .circle {
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .line {
+        width: 140px;
+    }
+    
+    .prev, .next {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+    
+    .inputs-con {
+        width: 100%;
+        height: 300px;
+        gap: 500px;
+        margin-bottom: 0;
+    }
+    
+    .con {
+        padding: 0 10px 0 50px;
+    }
+    
+    .con1-inputs, .con2-inputs, .con3-inputs {
+        width: 480px;
+    }
+    
+    .buttons {  
+        height: 100px;
+        width: 100%;
+        padding: 0 40px;
+    }
+    
+    .back, .finish {
+        padding: 12px 18px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--gray);
+    }
+    
+    .container {
+        height: 450px;
+        width: 600px;
+        padding: 20px 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .stepper {
+        padding: 10px 10px;
+    }
+    
+    .stepper-con {
+        width: calc(100% - 70px);
+        padding: 0;
+        height: 100%;
+        gap: 8px;
+    }
+
+    .main-t {
+        font-size: 16px;
+    }
+    
+    .line {
+        width: 110px;
+    }
+    
+    .inputs-con {
+        width: 560px;
+        height: 250px;
+        gap: 20px;
+    }
+    
+    .con {
+        justify-content: space-between;
+        align-items: start;
+        gap: 0;
+        padding: 20px 35px 0 35px;
+    }
+    
+    .input-t {
+        font-size: 18px;
+    }
+    
+    .con1-inputs, .con2-inputs, .con3-inputs {
+        width: 490px;
+        font-size: 15px;
+    }
+    
+    .con1-inputs::placeholder, .con2-inputs::placeholder, .con3-inputs::placeholder {
+        font-size: 15px;
+    }
+    
+    .con1-inputs, .con2-inputs {
+        height: 30px;
+    }
+    
+    .con3-inputs {
+        font-size: 16px;
+        line-height: 1;
+    }
+    
+    .buttons {
+        align-items: center;
+        padding: 0 35px;
+    }
+    
+    .back, .finish {
+        margin-top: 20px;
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    
 }
