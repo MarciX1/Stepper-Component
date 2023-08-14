@@ -305,7 +305,7 @@ body {
     }
     
     .con1-inputs, .con2-inputs, .con3-inputs {
-        width: 480px;
+        width: 380px;
     }
     
     .buttons {  
@@ -325,7 +325,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        height: 120vh;
         background: var(--gray);
     }
     

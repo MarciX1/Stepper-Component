@@ -33,7 +33,7 @@ function prevAndBack() {
         circle3.style.background = "transparent";
         spanLine2.style.animation = "spanLine2Back 0.3s ease forwards";
     } else if (currentIndex === 2) {
-        inputsCon.style.left = "0px";
+        inputsCon.style.left = "0";
         circle2.style.transitionDelay = "0s";
         circle2.style.background = "transparent";
         spanLine1.style.animation = "spanLine1Back 0.3s ease forwards";
@@ -50,7 +50,7 @@ nextBtn.addEventListener("click", () => {
         circle2.style.transitionDelay = "0.15s";
         circle2.style.background = "#f8b500";
     } else if (currentIndex === 2) {
-        inputsCon.style.left = "-1160px"; 
+        inputsCon.style.left = "-1160px";
         spanLine2.style.animation = "spanLine2 0.3s ease forwards";
         circle3.style.transitionDelay = "0.15s";
         circle3.style.background = "#f8b500";
