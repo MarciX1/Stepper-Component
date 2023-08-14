@@ -33,7 +33,7 @@ function prevAndBack() {
         circle3.style.background = "transparent";
         spanLine2.style.animation = "spanLine2Back 0.3s ease forwards";
     } else if (currentIndex === 2) {
-        inputsCon.style.left = "0";
+        inputsCon.style.left = "0px";
         circle2.style.transitionDelay = "0s";
         circle2.style.background = "transparent";
         spanLine1.style.animation = "spanLine1Back 0.3s ease forwards";
